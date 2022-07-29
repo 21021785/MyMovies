@@ -156,10 +156,10 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
                 int id = cursor.getInt(0);
                 String titleCurrent = cursor.getString(1);
-                String singerCurrent = cursor.getString(2);
+                String genreCurrent = cursor.getString(2);
                 int yearCurrent = Integer.parseInt(cursor.getString(3));
-                int starsCurrent = Integer.parseInt(cursor.getString(4));
-                Movie movie = new Movie(id, titleCurrent, singerCurrent, yearCurrent, starsCurrent);
+                String ratingCurrent = cursor.getString(4);
+                Movie movie = new Movie(id, titleCurrent, genreCurrent, yearCurrent, ratingCurrent);
                 movies.add(movie);
             } while (cursor.moveToNext());
         }
