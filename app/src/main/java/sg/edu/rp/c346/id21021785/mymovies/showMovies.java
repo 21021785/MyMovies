@@ -43,18 +43,18 @@ public class showMovies extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int
                     position, long identity) {
-                Song song = al.get(position);
-                Intent i = new Intent(SecondActivity.this,
-                        ThirdActivity.class);
-                i.putExtra("song", song);
+                Movie movie = al.get(position);
+                Intent i = new Intent(showMovies.this,
+                        modifyMovies.class);
+                i.putExtra("movie", movie);
                 startActivity(i);
             }
         });
 
-        show5Stars.setOnClickListener(new View.OnClickListener() {
+        showPG13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DBHelper dbh = new DBHelper(SecondActivity.this);
+                DBHelper dbh = new DBHelper(showMovies.this);
                 al.clear();
                 al.addAll(dbh.getAll5StarSongs());
 
@@ -63,26 +63,6 @@ public class showMovies extends AppCompatActivity {
             }
         });
 
-        /*
-        yearSelection.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        al.clear();
-                        al.addAll(dbh.getAllSongs());
-                        adapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-         */
-
 
     }
 
@@ -90,7 +70,7 @@ public class showMovies extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        DBHelper dbh = new DBHelper(SecondActivity.this);
+        DBHelper dbh = new DBHelper(showMovies.this);
         al.clear();
         al.addAll(dbh.getAllSongs());
         adapter.notifyDataSetChanged();
