@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return movies;
     }
 
-    public ArrayList<Movie> getAll5StarSongs() {
+    public ArrayList<Movie> getAllPG13Movies() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
 
         SQLiteDatabase db = this.getReadableDatabase();

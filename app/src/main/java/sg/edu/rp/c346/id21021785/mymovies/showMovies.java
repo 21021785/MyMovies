@@ -36,7 +36,7 @@ public class showMovies extends AppCompatActivity {
 
         DBHelper dbh = new DBHelper(showMovies.this);
         al.clear();
-        al.addAll(dbh.getAllSongs());
+        al.addAll(dbh.getAllMovies());
         adapter.notifyDataSetChanged();
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -45,7 +45,7 @@ public class showMovies extends AppCompatActivity {
                     position, long identity) {
                 Movie movie = al.get(position);
                 Intent i = new Intent(showMovies.this,
-                        modifyMovies.class);
+                        ModifyMovie.class);
                 i.putExtra("movie", movie);
                 startActivity(i);
             }
@@ -56,7 +56,7 @@ public class showMovies extends AppCompatActivity {
             public void onClick(View view) {
                 DBHelper dbh = new DBHelper(showMovies.this);
                 al.clear();
-                al.addAll(dbh.getAll5StarSongs());
+                al.addAll(dbh.getAllPG13Movies());
 
 
                 adapter.notifyDataSetChanged();
@@ -72,7 +72,7 @@ public class showMovies extends AppCompatActivity {
 
         DBHelper dbh = new DBHelper(showMovies.this);
         al.clear();
-        al.addAll(dbh.getAllSongs());
+        al.addAll(dbh.getAllMovies());
         adapter.notifyDataSetChanged();
     }
 }
