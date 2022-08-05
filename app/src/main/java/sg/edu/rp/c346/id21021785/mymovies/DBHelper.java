@@ -34,14 +34,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COLUMN_RATING + " TEXT ) ";
         db.execSQL(createSongTableSql);
         Log.i("info", "created tables");
-
-        //Dummy records, to be inserted when the database is created
-        for (int i = 0; i < 4; i++) {
-            ContentValues values = new ContentValues();
-            values.put(COLUMN_TITLE, "Data number " + i);
-            db.insert(TABLE_MOVIES, null, values);
-        }
-        Log.i("info", "dummy records inserted");
     }
 
 

@@ -35,6 +35,10 @@ public class ModifyMovie extends AppCompatActivity {
         Intent i = getIntent();
         movieDetails = (Movie) i.getSerializableExtra("movie");
 
+        etTitle.setText(movieDetails.getTitle());
+        etGenre.setText(movieDetails.getGenre());
+        etYear.setText(movieDetails.getYear() + "");
+
         rating.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {

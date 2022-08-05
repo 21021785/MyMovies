@@ -1,6 +1,7 @@
 package sg.edu.rp.c346.id21021785.mymovies;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,19 +45,20 @@ public class CustomAdapter extends ArrayAdapter{
         tvTitle.setText(currentVersion.getTitle());
         tvGenre.setText(currentVersion.getGenre());
         tvYear.setText(currentVersion.getYear() + "");
-        String rating = currentVersion.getRating();
+        //String rating = currentVersion.getRating();
+        Log.d("current movie sit", currentVersion.getTitle() + currentVersion.getGenre() + currentVersion.getYear() + "" + currentVersion.getRating());
 
-        if (rating.equalsIgnoreCase("G")) {
+        if (currentVersion.getRating().equals("G")) {
             ivRating.setImageResource(R.drawable.rating_g);
-        } else if (rating.equalsIgnoreCase("PG13")) {
+        } else if (currentVersion.getRating().equals("PG13")) {
             ivRating.setImageResource(R.drawable.rating_pg13);
-        } else if (rating.equalsIgnoreCase("PG")) {
+        } else if (currentVersion.getRating().equals("PG")) {
             ivRating.setImageResource(R.drawable.rating_pg);
-        } else if (rating.equalsIgnoreCase("NC16")) {
+        } else if (currentVersion.getRating().equals("NC16")) {
             ivRating.setImageResource(R.drawable.rating_nc16);
-        } else if (rating.equalsIgnoreCase("M18")) {
+        } else if (currentVersion.getRating().equals("M18")) {
             ivRating.setImageResource(R.drawable.rating_m18);
-        } else if (rating.equalsIgnoreCase("R21")) {
+        } else if (currentVersion.getRating().equals("R21")) {
             ivRating.setImageResource(R.drawable.rating_r21);
         }
 
