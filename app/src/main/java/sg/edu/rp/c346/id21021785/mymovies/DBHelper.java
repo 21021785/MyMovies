@@ -139,8 +139,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns= {COLUMN_ID, COLUMN_TITLE, COLUMN_GENRE, COLUMN_YEAR, COLUMN_RATING};
-        String condition = COLUMN_RATING + " LIKE 'PG13'";
-        String[] args = { condition};
+        String condition = COLUMN_RATING + " Like ?";
+        String[] args = {"PG13"};
         Cursor cursor = db.query(TABLE_MOVIES, columns, condition, args,
                 null, null, null, null);
 
