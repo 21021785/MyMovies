@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:hint="Enter Year Here" />
 
     <Spinner
@@ -58,7 +58,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -66,16 +66,16 @@
             android:id="@+id/btnInsert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
             android:layout_weight="1"
-            android:text="Insert"
-            android:layout_marginHorizontal="1dp"/>
+            android:text="Insert" />
 
         <Button
             android:id="@+id/btnShowList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="1dp"
             android:layout_weight="1"
-            android:text="Show List"
-            android:layout_marginHorizontal="1dp"/>
+            android:text="Show List" />
     </LinearLayout>
 </LinearLayout>

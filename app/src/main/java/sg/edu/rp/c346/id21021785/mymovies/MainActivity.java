@@ -67,20 +67,27 @@ public class MainActivity extends AppCompatActivity {
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!etTitle.getText().toString().isEmpty() && !etGenre.getText().toString().isEmpty() && !etYear.getText().toString().isEmpty()) {
+                if (!etTitle.getText().toString().isEmpty() && !etGenre.getText().toString().isEmpty() && !etYear.getText().toString().isEmpty() && etYear.getText().toString().length() == 4) {
 
                     String title = etTitle.getText().toString();
-                    String singer = etGenre.getText().toString();
+                    String genre = etGenre.getText().toString();
                     String year = etYear.getText().toString();
                     int yearToInt = Integer.parseInt(year);
 
 
 
                     DBHelper dbh = new DBHelper(MainActivity.this);
-                    long inserted_id = dbh.insertMovie(title, singer, yearToInt, storeRating);
+                    long inserted_id = dbh.insertMovie(title, genre, yearToInt, storeRating);
                     if (inserted_id != -1){
-                        Toast.makeText(MainActivity.this, "Insert successful", Toast.LENGTH_SHORT).show();
+                        Toast successfulInsert = Toast.makeText(MainActivity.this, "Insert successful", Toast.LENGTH_LONG);
+                        successfulInsert.show();
+                    } else {
+                        Toast failedInsert = Toast.makeText(MainActivity.this, "Insert failed", Toast.LENGTH_LONG);
+                        failedInsert.show();
                     }
+                } else {
+                    Toast failedInsert = Toast.makeText(MainActivity.this, "Insert failed, please check all input fields are filled and year has 4 digits", Toast.LENGTH_LONG);
+                    failedInsert.show();
                 }
             }
         });

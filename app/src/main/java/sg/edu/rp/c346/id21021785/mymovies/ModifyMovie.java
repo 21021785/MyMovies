@@ -40,6 +40,21 @@ public class ModifyMovie extends AppCompatActivity {
         etTitle.setText(movieDetails.getTitle());
         etGenre.setText(movieDetails.getGenre());
         etYear.setText(movieDetails.getYear() + "");
+        storeRating = movieDetails.getRating();
+
+        if (storeRating.equalsIgnoreCase("G")) {
+            rating.setSelection(0);
+        } else if (storeRating.equalsIgnoreCase("PG")) {
+            rating.setSelection(1);
+        } else if (storeRating.equalsIgnoreCase("PG13")) {
+            rating.setSelection(2);
+        } else if (storeRating.equalsIgnoreCase("NC16")) {
+            rating.setSelection(3);
+        } else if (storeRating.equalsIgnoreCase("M18")) {
+            rating.setSelection(4);
+        } else if (storeRating.equalsIgnoreCase("R21")) {
+            rating.setSelection(5);
+        }
 
         rating.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
